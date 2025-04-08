@@ -145,14 +145,13 @@ function createWalls() {
   scene.add(rightWall);
 }
 
-
 // 전시물 생성 함수
 function createExhibits() {
   // 전시대 생성
   const pedestalGeometry = new THREE.BoxGeometry(2, 1, 2);
   const pedestalMaterial = new THREE.MeshStandardMaterial({ color: 0x333333 });
   
-  // 전시물 1: 글록19
+  // 전시물 1: 폼 핑거 https://www.cgtrader.com/free-3d-models/sports/equipment/cc0-foam-finger
   const pedestal1 = new THREE.Mesh(pedestalGeometry, pedestalMaterial);
   pedestal1.position.set(-8, 0.5, -10);
   pedestal1.castShadow = true;
@@ -176,9 +175,8 @@ function createExhibits() {
         console.error('An error occurred while loading the glb:', error);
     }
   );
-  // https://www.cgtrader.com/free-3d-models/various/various-models/glock-19-gen-5-e2ebbee7-5c1e-4b01-8dcc-41d48dff8531
   
-  // 전시물 2: 햄버거
+  // 전시물 2: 햄버거 https://www.cgtrader.com/free-3d-models/food/vegetable/stylized-burger-45d51d8c-5836-4252-8b16-8a2d446cb7a9
   const pedestal2 = new THREE.Mesh(pedestalGeometry, pedestalMaterial);
   pedestal2.position.set(0, 0.5, -10);
   pedestal2.castShadow = true;
@@ -201,9 +199,8 @@ function createExhibits() {
         console.error('An error occurred while loading the glb:', error);
     }
   );
-  // https://www.cgtrader.com/free-3d-models/food/vegetable/stylized-burger-45d51d8c-5836-4252-8b16-8a2d446cb7a9
   
-  // 전시물 3: 농구공
+  // 전시물 3: 농구공 https://www.cgtrader.com/free-3d-models/sports/equipment/basketball-6bb1cd4a-add6-4a1c-acac-d3a5ae4d2595
   const pedestal3 = new THREE.Mesh(pedestalGeometry, pedestalMaterial);
   pedestal3.position.set(8, 0.5, -10);
   pedestal3.castShadow = true;
