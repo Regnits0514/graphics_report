@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Three.js WebGPU 무지개 큐브</title>
+    <style>
+      body { margin: 0; overflow: hidden; }
+    </style>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <script type="module">
+      import * as THREE from 'three';
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+      import WebGPURenderer from 'three/addons/renderers/webgpu/WebGPURenderer.js';
+
+      function isWebGPUSupported() {
+        return !!navigator.gpu;
+      }
+
+      if (isWebGPUSupported()) {
+        const renderer = new WebGPURenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x222222);
+
+        const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.z = 3;
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(5, 5, 5);
+        scene.add(light);
+
+        let hue = 0;
+        function animate() {
+          requestAnimationFrame(animate);
+
+          // 🌈 무지개 색상 애니메이션
+          hue += 0.002;
+          if (hue > 1) hue = 0;
+          cube.material.color.setHSL(hue, 1.0, 0.5);
+
+          cube.rotation.x += 0.01;
+          cube.rotation.y += 0.01;
+
+          controls.update();
+          renderer.render(scene, camera);
+        }
+
+        animate();
+      } else {
+        document.body.innerHTML = `<h2 style="color:red;">WebGPU not supported in this browser.</h2>`;
+      }
+    </script>
+  </body>
+</html>
