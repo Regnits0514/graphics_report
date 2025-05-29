@@ -25,7 +25,7 @@ pause
 
 중요 : (VULKAN_SDK) 위치는 무조건 본인이 설치한 vulkan 폴더 위치 지정
 
-4. 실행하여 vert.spv 및 frag.spv가 생성되면 성공
+4. compiler.bat를 실행하여 vert.spv 및 frag.spv가 생성되면 성공
 
 ## <p>$\it{\large{\color{#DD6565}오류 해결방안 / **VS 17** 이상을 설정해야 함.}}$</p>
 프로젝트 > 속성 > 구성 속성 > 일반 > 플랫폼 도구 집합 > **Visual Studio 2022 (v143)** 선택
