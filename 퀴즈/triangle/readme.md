@@ -22,7 +22,8 @@
 
 pause
 
-(VULKAN_SDK) 위치는 무조건 본인이 설치한 vulkan 폴더 위치 지정
+
+중요 : (VULKAN_SDK) 위치는 무조건 본인이 설치한 vulkan 폴더 위치 지정
 
 4. 실행하여 vert.spv 및 frag.spv가 생성되면 성공
 
