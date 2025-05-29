@@ -15,11 +15,14 @@
 1. .\shaders\ [shader.vert](https://github.com/Regnits0514/graphics_report/blob/main/%ED%80%B4%EC%A6%88/triangle/shaders/shader.vert) 작성
 2. .\shaders\ [shader.frag](https://github.com/Regnits0514/graphics_report/blob/main/%ED%80%B4%EC%A6%88/triangle/shaders/shader.frag) 작성
 3. cd .\shaders\ 및 컴파일 하기위한 compiler.bat를 작성
-$(VULKAN_SDK)/Bin/glslc.exe shader.vert -o vert.spv
-$(VULKAN_SDK)/Bin/glslc.exe shader.frag -o frag.spv
+
+(VULKAN_SDK)/Bin/glslc.exe shader.vert -o vert.spv
+
+(VULKAN_SDK)/Bin/glslc.exe shader.frag -o frag.spv
+
 pause
 
-$(VULKAN_SDK) 위치는 무조건 본인이 설치한 vulkan 폴더 위치 지정
+(VULKAN_SDK) 위치는 무조건 본인이 설치한 vulkan 폴더 위치 지정
 
 4. 실행하여 vert.spv 및 frag.spv가 생성되면 성공
 
